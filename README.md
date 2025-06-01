@@ -96,15 +96,15 @@ This benchmark evaluates **identity preservation** in face image transformations
 - **CLIP**: Semantic similarity (0-1, higher better)  
 - **FID**: Image quality (lower better)
 
-## CSV Data Files
+## Complete Results & Data
 
-Detailed statistics available in repository:
-- `emotions_api_complexity.csv` - Expression transformations
-- `age_api_complexity.csv` - Age progression analysis  
-- `hair_api_complexity.csv` - Hair styling results
-- `accessories_api_complexity.csv` - Accessory additions
+📁 **Full benchmark data available on Google Drive**: [Benchmark Results](https://drive.google.com/drive/folders/1U1Snqj-r9pI0vzS09wEju8w-LZe4g7Gh?usp=sharing)
 
-📁 **Complete results**: [Google Drive](https://drive.google.com/drive/folders/1U1Snqj-r9pI0vzS09wEju8w-LZe4g7Gh?usp=sharing)
+**Includes:**
+- Detailed CSV files with per-image statistics
+- Generated images for all 8,832 transformation pairs
+- Comparison tables and analysis breakdowns
+- Raw metric calculations for reproducibility
 
 ## Citation
 
