@@ -1,7 +1,6 @@
-
+# FlyMyAI Benchmarks
 
 ## GenEval Benchmark Results Comparison
-
 | Type | Model | Single Obj. | Two Obj. | Counting | Colors | Position | Color Attr. | Overall |
 |------|-------|-------------|----------|----------|---------|----------|-------------|---------|
 | **Gen. Only** | PixArt-α [9] | 0.98 | 0.50 | 0.44 | 0.80 | 0.08 | 0.07 | 0.48 |
@@ -28,7 +27,6 @@
 | | BAGEL† | 0.98 | 0.95 | 0.84 | 0.95 | 0.78 | 0.77 | 0.88 |
 
 ## WISE Benchmark Results
-
 | Type | Model | Cultural | Time | Space | Biology | Physics | Chemistry | Overall |
 |------|-------|----------|------|-------|---------|---------|-----------|---------|
 | **Gen-Only** | SDv1.5 | 0.34 | 0.35 | 0.32 | 0.28 | 0.29 | 0.21 | **0.32** |
@@ -46,4 +44,38 @@
 | | GPT-4o** | 0.81 | 0.71 | 0.89 | 0.83 | 0.79 | 0.74 | **0.80** |
 | | BAGEL | 0.44 | 0.55 | 0.68 | 0.44 | 0.60 | 0.39 | **0.52** |
 | | BAGEL w/ Self-CoT | 0.76 | 0.69 | 0.75 | 0.65 | 0.75 | 0.58 | **0.70** |
-| | **FlyMy AI M1** | **0.791** | **0.926** | **0.876** | **0.838** | **0.910** | **0.841** | **0.864** | 
+| | **FlyMy AI M1** | **0.791** | **0.926** | **0.876** | **0.838** | **0.910** | **0.841** | **0.864** |
+
+## Face Identity Preservation Benchmark
+
+### 🎯 Single Number Comparison (Identity Preservation)
+| API | Overall Score | Advantage |
+|-----|---------------|-----------|
+| **FlyMyAI** | **0.917** ⭐ | **+44% vs Bagel/Edit, +135% vs OpenAI** |
+| Bagel/Edit | 0.636 | +63% vs OpenAI |
+| OpenAI | 0.390 | Baseline |
+
+**Dataset**: 8,832 face transformation pairs from 50 FFHQ images across emotions, age, hair, and accessories transformations.
+
+### Best Performance Per Category (Peak Results)
+| Category | FlyMyAI Best | Bagel/Edit Best | OpenAI Best | Category Winner |
+|----------|-------------|-----------------|-------------|-----------------|
+| **Emotions** | 0.977 (maximal) | 0.907 (simple) | 0.401 (mid) | **FlyMyAI** |
+| **Age** | 0.915 (mid) | 0.720 (simple) | 0.404 (mid) | **FlyMyAI** |
+| **Hair** | 0.899 (maximal) | 0.845 (simple) | 0.398 (mid) | **FlyMyAI** |
+| **Accessories** | 0.930 (mid) | **0.955 (simple)** | 0.402 (mid) | **Bagel/Edit** |
+
+### Critical Finding: Prompt Complexity Impact
+| API | Simple → Complex | Trend |
+|-----|------------------|--------|
+| **FlyMyAI** | 0.903 → 0.929 | **Improves +3%** ⬆️ |
+| **Bagel/Edit** | 0.857 → 0.457 | **Degrades -47%** ⬇️ |
+| **OpenAI** | 0.385 → 0.383 | Stable (poor) → |
+
+### Key Insights
+- **FlyMyAI dominates** 3 out of 4 categories and benefits from complex prompts
+- **Bagel/Edit competitive** only in accessories with simple prompts (0.955 vs 0.930)
+- **Complex prompting advantage**: Only FlyMyAI improves with detailed instructions
+- **Production recommendation**: FlyMyAI for identity-critical face transformations
+
+📁 **Detailed results**: [Face Identity Benchmark](./face_identity_benchmark/)
