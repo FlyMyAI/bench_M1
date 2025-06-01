@@ -82,37 +82,3 @@ gen_evaluation/
 ├── geneval_prompts.csv                # Per-prompt results
 └── geneval_errors.csv                 # Error analysis
 ```
-
-## 📈 Key Insights
-
-### Strengths
-- **Excellent at basic tasks**: 99.38% accuracy for single objects
-- **Strong multi-object generation**: 97.46% for two objects
-- **Good color understanding**: 86.02% for basic colors
-- **Professional-grade overall performance**: 0.77 score
-
-### Areas for Improvement
-- **Spatial reasoning**: 50.50% accuracy for positioning tasks
-- **Complex attributes**: 57.75% for color attributes
-- **Counting precision**: 70.31% for object counting
-
-## 🔧 Technical Details
-
-- **Object Detection Model**: Mask2Former with Swin-S backbone
-- **CLIP Model**: ViT-L-14
-- **Detection Thresholds**: 0.3 (general), 0.9 (counting)
-- **Images per Prompt**: 4
-- **Total Prompts**: 553 (covering 6 categories)
-
-## 📄 Reports
-
-- `geneval_comparison_table.md` - Benchmark comparison with other models
-- `full_evaluation_report.md` - Detailed analysis and results
-- `geneval_*.csv` - Machine-readable data for further analysis
-
-## 🎖️ Achievements
-
-- **Top 25%** performance among all evaluated models
-- **Surpasses DALL-E 3** (0.67) and many other commercial models
-- **Professional-grade quality** suitable for real-world applications
-- **Excellent baseline** for further model improvements 
