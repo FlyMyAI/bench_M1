@@ -5,7 +5,7 @@ A comprehensive evaluation of face transformation APIs across three prompt compl
 ## Overview
 
 This benchmark evaluates **identity preservation** in face image transformations across:
-- **3 APIs**: FlyMy, FAL (Bagel/Edit), OpenAI (GPT-4V + DALL-E 3)
+- **3 APIs**: FlyMy, Bagel/Edit, OpenAI (GPT-4V + DALL-E 3)
 - **3 Complexity Levels**: Simple, Mid, Maximal prompts  
 - **4 Categories**: Emotions, Age, Hair, Accessories
 - **3 Metrics**: UNPG Similarity, CLIP Similarity, FID Score
@@ -19,7 +19,7 @@ This benchmark evaluates **identity preservation** in face image transformations
 | API | Overall Score | Advantage |
 |-----|---------------|-----------|
 | **FlyMy** | **0.917** ⭐ | **+44% vs FAL, +135% vs OpenAI** |
-| FAL (Bagel/Edit) | 0.636 | +63% vs OpenAI |
+| Bagel/Edit | 0.636 | +63% vs OpenAI |
 | OpenAI | 0.390 | Baseline |
 
 ### 📊 Quick Comparison
@@ -48,7 +48,7 @@ This benchmark evaluates **identity preservation** in face image transformations
 | API | Simple → Maximal | Trend |
 |-----|------------------|--------|
 | **FlyMy** | 0.903 → 0.929 | **Improves +3%** ⬆️ |
-| FAL (Bagel/Edit) | 0.857 → 0.457 | Degrades -47% ⬇️ |
+| Bagel/Edit | 0.857 → 0.457 | Degrades -47% ⬇️ |
 | OpenAI | 0.385 → 0.383 | Stable (poor) → |
 
 ### Best Use Cases
@@ -58,7 +58,7 @@ This benchmark evaluates **identity preservation** in face image transformations
 | **Emotion changes** | FlyMy + Maximal | 0.977 |
 | **Age transformations** | FlyMy + Mid | 0.915 |
 | **Hair styling** | FlyMy + Maximal | 0.899 |
-| **Simple accessories** | FAL + Simple | 0.955 |
+| **Simple accessories** | Bagel/Edit + Simple | 0.955 |
 
 ## Key Insights
 
@@ -66,14 +66,14 @@ This benchmark evaluates **identity preservation** in face image transformations
 
 1. **Default choice**: FlyMy for all face transformations
 2. **Complex prompts**: Only beneficial with FlyMy
-3. **Simple accessories**: FAL Bagel/Edit competitive (0.955 vs 0.928)
+3. **Simple accessories**: Bagel/Edit competitive (0.955 vs 0.928)
 4. **Avoid**: OpenAI for identity-critical applications
 5. **Category difficulty**: Age > Hair > Accessories > Emotions
 
 ### 🔍 Technical Findings
 
 - **FlyMy**: Specialized for identity preservation, benefits from complexity
-- **FAL Bagel/Edit**: Good for simple edits, degrades with complex prompts  
+- **Bagel/Edit**: Good for simple edits, degrades with complex prompts  
 - **OpenAI**: Two-stage process limits identity preservation
 - **Emotions**: Easiest category (0.680 avg)
 - **Age**: Most challenging category (0.612 avg)
