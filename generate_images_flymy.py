@@ -15,7 +15,7 @@ load_dotenv()
 BASE_URL = "https://api.chat.flymy.ai"
 
 # API Key
-API_KEY = "REMOVED_API_KEY"
+API_KEY = "fly-***"
 
 # Endpoint
 endpoint = "/chat"
