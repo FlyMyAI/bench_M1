@@ -16,7 +16,9 @@ import io
 class FlymyImageGenerator:
     def __init__(self, api_key=None):
         self.base_url = "https://api.chat.flymy.ai"
-        self.api_key = api_key or "REMOVED_API_KEY"
+        self.api_key = api_key or os.getenv("FLYMY_API_KEY")
+        if not self.api_key:
+            raise ValueError("API key not provided. Please set FLYMY_API_KEY environment variable or pass api_key parameter.")
         self.headers = {
             "X-API-KEY": self.api_key,
             "Content-Type": "application/json",

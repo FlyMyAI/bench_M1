@@ -1,0 +1,18 @@
+# Environment variables
+.env
+*.env
+
+# API keys and secrets
+*api_key*
+*secret*
+*token*
+
+# Temporary files
+*.tmp
+*.log
+
+# Output directories
+output/
+results/
+__pycache__/
+*.pyc 
