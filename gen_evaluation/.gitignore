@@ -1,0 +1,11 @@
+*.pth
+*.csv
+*.jsonl
+*.json
+
+*.txt
+*.log
+*.err
+*.out
+*.err.log
+*.out.log
