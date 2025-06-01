@@ -76,55 +76,6 @@ The evaluation covers **1000 prompts** across **6 major categories**:
 ### WiScore Calculation
 WiScore = (0.7 × Consistency + 0.2 × Realism + 0.1 × Aesthetic Quality) / 2
 
-Each metric is scored on a 0-2 scale:
-- **Consistency**: Alignment between prompt and generated image
-- **Realism**: Visual quality and believability
-- **Aesthetic Quality**: Artistic appeal and composition
-
-## Benchmark Comparison
-
-The system automatically compares your model against 18 state-of-the-art models from the WISE paper, including:
-
-### Top Performers
-- **FLUX.1-dev**: 0.500 WiScore
-- **playground-v2.5**: 0.490 WiScore  
-- **FLUX.1-schnell**: 0.480 WiScore
-
-### Popular Models
-- **DALL-E 3**: 0.430 WiScore
-- **Midjourney-v6**: 0.440 WiScore
-- **Stable Diffusion XL**: 0.450 WiScore
-
-## Output Files
-
-### Results
-- `wise_evaluation_results/evaluation_results.json` - Complete evaluation data
-- Progress is saved after each sample evaluation
-
-### Reports  
-- `wise_evaluation_results/wise_report.md` - Markdown analysis report
-- `wise_evaluation_results/wise_report.html` - Interactive HTML report
-
-### Images
-- `wise_evaluation_results/images/` - Generated images with sample IDs
-
-## Advanced Usage
-
-### Generate Analysis Reports
-```bash
-python analyze_wise_results.py
-```
-
-### Create Detailed Report
-```bash
-python generate_wise_report.py
-```
-
-### Monitor Real-time Progress
-```bash
-python check_progress.py
-```
-
 ## Key Features
 
 ✅ **Fault Tolerance**: Results saved after each evaluation  
@@ -155,11 +106,28 @@ wise_evaluation/
 - Python 3.8+
 - OpenAI API key (for GPT-4o evaluation)
 - FlyMy AI API key (for image generation)
-- Internet connection for API calls
 
-## Contributing
+## WISE Benchmark Results
 
-This evaluation system is designed to be model-agnostic. To integrate with other text-to-image APIs, modify the `bot_api.py` interface while maintaining the same return format.
+| Type | Model | Cultural | Time | Space | Biology | Physics | Chemistry | Overall |
+|------|-------|----------|------|-------|---------|---------|-----------|---------|
+| **Gen-Only** | SDv1.5 | 0.34 | 0.35 | 0.32 | 0.28 | 0.29 | 0.21 | **0.32** |
+| | SDXL | 0.43 | 0.48 | 0.47 | 0.44 | 0.45 | 0.27 | **0.43** |
+| | SD3.5-large | 0.44 | 0.50 | 0.58 | 0.44 | 0.52 | 0.31 | **0.46** |
+| | PixArt-Alpha | 0.45 | 0.50 | 0.48 | 0.49 | 0.56 | 0.34 | **0.47** |
+| | playground-v2.5 | 0.49 | 0.58 | 0.55 | 0.43 | 0.48 | 0.33 | **0.49** |
+| | FLUX.1-dev | 0.48 | 0.58 | 0.62 | 0.42 | 0.51 | 0.35 | **0.50** |
+| **Unified** | Janus | 0.16 | 0.26 | 0.35 | 0.28 | 0.30 | 0.14 | **0.23** |
+| | VILA-U | 0.26 | 0.33 | 0.37 | 0.35 | 0.39 | 0.23 | **0.31** |
+| | Show-o-512 | 0.28 | 0.40 | 0.48 | 0.30 | 0.46 | 0.30 | **0.35** |
+| | Janus-Pro-7B | 0.30 | 0.37 | 0.49 | 0.36 | 0.42 | 0.26 | **0.35** |
+| | Emu3 | 0.34 | 0.45 | 0.48 | 0.41 | 0.45 | 0.27 | **0.39** |
+| | MetaQuery-XL | 0.56 | 0.55 | 0.62 | 0.49 | 0.63 | 0.41 | **0.55** |
+| | GPT-4o** | 0.81 | 0.71 | 0.89 | 0.83 | 0.79 | 0.74 | **0.80** |
+| | BAGEL | 0.44 | 0.55 | 0.68 | 0.44 | 0.60 | 0.39 | **0.52** |
+| | BAGEL w/ Self-CoT | 0.76 | 0.69 | 0.75 | 0.65 | 0.75 | 0.58 | **0.70** |
+| | **FlyMy AI Bot** | **0.791** | **0.926** | **0.876** | **0.838** | **0.910** | **0.841** | **0.864** | 
+
 
 ## License
 
