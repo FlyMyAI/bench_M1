@@ -78,4 +78,4 @@
 - **Complex prompting advantage**: Only FlyMyAI improves with detailed instructions
 - **Production recommendation**: FlyMyAI for identity-critical face transformations
 
-📁 **Detailed results**: [Face Identity Benchmark](./face_identity_benchmark/)
+📁 **Detailed results**: [Face Identity Benchmark](./face_identity_evaluation/)
