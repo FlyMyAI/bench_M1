@@ -10,7 +10,7 @@ This benchmark evaluates **identity preservation** in face image transformations
 - **4 Categories**: Emotions, Age, Hair, Accessories
 - **3 Metrics**: UNPG Similarity, CLIP Similarity, FID Score
 
-**Dataset**: First 50 images from FFHQ dataset, generating 8,832 transformation pairs
+**Dataset**: First 50 images from FFHQ dataset. For each API, we generated approximately **1,000 transformed images** (50 base images × 20 prompts), totaling **8,832 transformation pairs** across all APIs and complexity levels.
 
 ## Executive Summary
 
@@ -82,11 +82,12 @@ This benchmark evaluates **identity preservation** in face image transformations
 
 ### Dataset
 - **Source**: First 50 images from FFHQ dataset
+- **Per API**: ~1,000 generated images (50 base × 20 prompts)
+- **Total pairs**: 8,832 image comparisons across all APIs
 - **Transformations**: 20 prompts × 3 complexity levels × 3 APIs
-- **Total pairs**: 8,832 image comparisons
 
 ### APIs Tested
-- **FlyMy**: Direct transformation API
+- **FlyMy**: Chat agent with SOTA face editing models
 - **FAL**: fal-ai/bagel/edit model
 - **OpenAI**: GPT-4V analysis + DALL-E 3 generation
 
@@ -111,5 +112,5 @@ Detailed statistics available in repository:
 @misc{face_identity_benchmark_2025,
  title={Face Identity Preservation Benchmark: A Multi-Metric Evaluation of Face Transformation APIs},
  year={2025},
- url={https://github.com/[your-repo]/face-identity-benchmark}
+ url={https://github.com/FlyMyAI/bench_M1}
 }
