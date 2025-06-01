@@ -1,0 +1,180 @@
+{
+  "benchmark_info": {
+    "name": "Face Identity Preservation Benchmark - Small Set",
+    "version": "1.0-small",
+    "total_categories": 4,
+    "intensity_levels": 1,
+    "prompts_per_image": 20,
+    "total_images": 50,
+    "total_requests": 1000,
+    "estimated_cost_usd": 100.0
+  },
+  "categories": {
+    "emotions": {
+      "description": "Facial expression modifications",
+      "intensity_1_subtle": [
+        {
+          "id": 1,
+          "prompt": "Make the person smile slightly",
+          "expected_difficulty": "easy"
+        },
+        {
+          "id": 2,
+          "prompt": "Make the person very happy",
+          "expected_difficulty": "medium"
+        },
+        {
+          "id": 3,
+          "prompt": "Make them look surprised",
+          "expected_difficulty": "easy"
+        }
+      ],
+      "intensity_2_moderate": [
+        {
+          "id": 4,
+          "prompt": "Make them look sad",
+          "expected_difficulty": "medium"
+        },
+        {
+          "id": 5,
+          "prompt": "Make them furious",
+          "expected_difficulty": "hard"
+        }
+      ],
+      "intensity_3_intense": []
+    },
+    "age": {
+      "description": "Age transformation modifications",
+      "intensity_1_subtle": [
+        {
+          "id": 6,
+          "prompt": "Make them look like a teenager",
+          "expected_difficulty": "medium"
+        },
+        {
+          "id": 7,
+          "prompt": "Make the person look like a child",
+          "expected_difficulty": "hard"
+        },
+        {
+          "id": 8,
+          "prompt": "Make them look elderly",
+          "expected_difficulty": "hard"
+        }
+      ],
+      "intensity_2_moderate": [
+        {
+          "id": 9,
+          "prompt": "Make the person look like a baby",
+          "expected_difficulty": "very_hard"
+        },
+        {
+          "id": 10,
+          "prompt": "Age them to 70 years old",
+          "expected_difficulty": "hard"
+        }
+      ],
+      "intensity_3_intense": []
+    },
+    "hair": {
+      "description": "Hair style and color modifications",
+      "intensity_1_subtle": [
+        {
+          "id": 11,
+          "prompt": "Change hair to blonde",
+          "expected_difficulty": "easy"
+        },
+        {
+          "id": 12,
+          "prompt": "Change to curly red hair",
+          "expected_difficulty": "medium"
+        },
+        {
+          "id": 13,
+          "prompt": "Make hair very short",
+          "expected_difficulty": "medium"
+        }
+      ],
+      "intensity_2_moderate": [
+        {
+          "id": 14,
+          "prompt": "Give them rainbow colored hair",
+          "expected_difficulty": "hard"
+        },
+        {
+          "id": 15,
+          "prompt": "Make them completely bald",
+          "expected_difficulty": "very_hard"
+        }
+      ],
+      "intensity_3_intense": []
+    },
+    "accessories": {
+      "description": "Addition of accessories and clothing items",
+      "intensity_1_subtle": [
+        {
+          "id": 16,
+          "prompt": "Add simple glasses",
+          "expected_difficulty": "easy"
+        },
+        {
+          "id": 17,
+          "prompt": "Add sunglasses",
+          "expected_difficulty": "medium"
+        },
+        {
+          "id": 18,
+          "prompt": "Add a baseball cap",
+          "expected_difficulty": "medium"
+        }
+      ],
+      "intensity_2_moderate": [
+        {
+          "id": 19,
+          "prompt": "Add elaborate crown",
+          "expected_difficulty": "hard"
+        },
+        {
+          "id": 20,
+          "prompt": "Add face paint",
+          "expected_difficulty": "very_hard"
+        }
+      ],
+      "intensity_3_intense": []
+    }
+  },
+  "evaluation_framework": {
+    "metrics": [
+      {
+        "name": "UNPG Similarity",
+        "type": "primary",
+        "description": "Cosine similarity between original and transformed face embeddings",
+        "range": [0.0, 1.0],
+        "higher_is_better": true
+      }
+    ],
+    "difficulty_thresholds": {
+      "easy": {
+        "expected_unpg_similarity": "> 0.90",
+        "description": "Minimal identity impact expected"
+      },
+      "medium": {
+        "expected_unpg_similarity": "0.75 - 0.90",
+        "description": "Moderate identity impact expected"
+      },
+      "hard": {
+        "expected_unpg_similarity": "0.60 - 0.75", 
+        "description": "Significant identity impact expected"
+      },
+      "very_hard": {
+        "expected_unpg_similarity": "< 0.60",
+        "description": "Major identity impact expected"
+      }
+    }
+  },
+  "usage_instructions": {
+    "batch_processing": "Process all 20 prompts per image in sequence",
+    "naming_convention": "original_name_category_intensity_promptid.png",
+    "expansion_plan": "Use this as base for medium and enhanced complexity versions"
+  }
+}
