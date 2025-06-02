@@ -6,7 +6,7 @@
 |----------------|-------------------|---------------|--------------|----------------|
 | Image generation quality (GenEval) | **0.83** | 0.82 | 0.67 | N/A |
 | Semantic alignment (WISE) | **0.83** | 0.80 | 0.69 | **0.87** |
-| Editing accuracy (GEdit-Bench) | 6.85 | **6.90** | N/A | **7.62** |
+| Editing accuracy (GEdit-Average) | 6.85 | **6.90** | N/A | **7.62** |
 | Face-preserving editing (Face ID Similarity) | **0.917** | 0.636 | 0.390 | Low (N/A) |
 | Advanced video generation | ✅ | ❌ | ❌ | ❌ |
 
