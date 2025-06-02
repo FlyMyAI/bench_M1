@@ -73,5 +73,13 @@
 | **OpenAI** | 0.385 → 0.383 | Stable (poor) → |
 
 
-# Image editing metrics TBD
+### Key Insights
+- **FlyMyAI dominates** 3 out of 4 categories and benefits from complex prompts
+- **Bagel/Edit competitive** only in accessories with simple prompts (0.955 vs 0.930)
+- **Complex prompting advantage**: Only FlyMyAI improves with detailed instructions
+- **Production recommendation**: FlyMyAI for identity-critical face transformations
 
+📁 **Detailed results**: [Face Identity Benchmark](./face_identity_evaluation/)
+
+
+### Image editing metrics TBD
