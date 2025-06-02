@@ -2,7 +2,7 @@
 
 ## Overall
 
-| Metric / Model | FlyMy.AI Agent M1 | Tencent Bagel | OpenAI Dalle | OpenAI Image 1 |
+| Metric / Model | FlyMy.AI Agent M1 | ByteDance Bagel | OpenAI Dalle | OpenAI Image 1 |
 |----------------|-------------------|---------------|--------------|----------------|
 | Image generation quality (GenEval) | **0.83** | 0.82 | 0.67 | N/A |
 | Semantic alignment (WISE) | **0.83** | 0.80 | 0.69 | **0.87** |
