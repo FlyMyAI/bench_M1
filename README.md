@@ -1,5 +1,15 @@
 # FlyMyAI Benchmarks
 
+## Overall
+
+| Metric / Model | FlyMy.AI Agent M1 | Tencent Bagel | OpenAI Dalle | OpenAI Image 1 |
+|----------------|-------------------|---------------|--------------|----------------|
+| Image generation quality (GenEval) | **0.83** | 0.82 | 0.67 | N/A |
+| Semantic alignment (WISE) | **0.82** | 0.80 | 0.69 | **0.87** |
+| Editing accuracy (GEdit-Bench) | 6.85 | **6.90** | N/A | **7.62** |
+| Face-preserving editing (Face ID Similarity) | **0.917** | 0.636 | 0.390 | Low (N/A) |
+| Advanced video generation | ✅ | ❌ | ❌ | ❌ |
+
 ## GenEval Benchmark Results Comparison
 
 | Type | Model | Single Obj. | Two Obj. | Counting | Colors | Position | Color Attr. | Overall |
@@ -81,5 +91,3 @@
 
 📁 **Detailed results**: [Face Identity Benchmark](./face_identity_evaluation/)
 
-
-### Image editing metrics TBD
